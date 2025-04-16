@@ -1,0 +1,6 @@
+table,th,td,tr{
+    border: 10px;
+    border-color: black;
+    border-style: double;    
+    /* border-collapse: collapse; */
+}
