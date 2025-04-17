@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 60px;
+          box-shadow: 0 2px 6px rgb(255, 255, 255);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f60;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        nav ul li a.signin, nav ul li a.signup {
+            padding: 5px 15px;
+            border: 1px solid rgb(107, 106, 106);
+            border-radius: 5px;
+
+        }
+
+        nav ul li a.signin:hover, nav ul li a.signup:hover {
+            background-color: #f60;
+            color: #fff;
+        }
+
+        .home {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .home-content {
+            z-index: 1;
+            color: #000000;
+        }
+
+        .home-content h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .home-content p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .home-content button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f60;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .home-content button:hover {
+            background-color: #e65c00;
+            border-radius: 30px;
+        }
+
+        .home-image {
+            position: relative;
+        }
+
+        .home-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .delivery-info {
+            position: absolute;
+            top: 10px;
+            right: -50px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .delivery-info1 {
+            position: absolute;
+            top: 20px;
+            right: -50px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .delivery-info p {
+            margin: 5px 0;
+            color: #333;
+        }
+        
+    @media screen and (max-width:480px){
+        nav{
+            display: flex;
+            flex-direction: column;
+        }
+        nav ul li{
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">FoodHub</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#food">Foods</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#signin" class="signin">Sign In</a></li>
+                <li><a href="#signup" class="signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+          <h2 style="color:gray;">---FRESH & DELICIOUS</h2>
+            <h1>Delicious Meals <br> Delivered to Your Door</h1>
+            <p>Enjoy flavorful meals made with the finest ingredients, delivered right to your door every time.</p>
+            <button class="order">Order More</button>  <button class="learn">Learn More</button>
+        </div>
+        <div class="home-image">
+            <img src="" alt="Burger">
+            <div class="delivery-info1">
+              <p>30 min Delivery</p>
+          </div>
+            <div class="delivery-info">
+                <p>Our Happy Customers <br> ★★★★★ (4.5/5)</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
