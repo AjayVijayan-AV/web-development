@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyMore Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.fullbody {
+    display: flex;
+    min-height: 1000px;
+    background-color: #f5f5f5;
+}
+
+.sidebar{
+    background-color: #fff;
+    border-right: 1px solid #e5e7eb;
+    width: 260px; 
+}
+
+.sidebar h1 {
+    color: #3b82f6; 
+    font-size: 2rem; 
+    font-weight: bold;
+}
+
+.sidebar p {
+    color: #4b5563; 
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    position: relative;
+    color: #4b5563;
+    font-size: 0.8rem;
+    margin-bottom: rem;
+    background-color: #3b82f6;
+}
+
+.sidebar nav  li a.flex-space-p {
+    color: #fff;
+    padding: 20px 20px;
+    border-radius: 1000px;
+}
+
+.sidebar.buy-menu {
+    margin-top: 1.5rem;
+}
+
+.sidebarbutton {
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.sidebarbutton.order-text-list {
+    color: #3b82f6;
+}
+
+.main {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+header button {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background-color: #e5e7eb; 
+    border: none;
+    cursor: pointer;
+}
+
+header button.bg-white {
+    background-color: #fff;
+}
+
+header .flex-space-p {
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.main .flex.flex-space {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 9999px;
+}
+
+.main .flex.flex-space{
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 9999px;
+}
+button{
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 9999px;
+}
+.main  {
+    border-bottom: 2px solid #3b82f6;
+}
+
+.main.flex.flex-space button.flex-space-list {
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+}
+
+.main .flex.flex-space button.ml-auto {
+    margin-left: auto;
+}
+h2 {
+    font-size: 1.875rem; 
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.grid {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.box {
+    padding: 1.5rem;
+    border-radius: 1rem; 
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box.bg-green-100 {
+    background-color: #47ed97; 
+}
+
+.box.bg-yellow-100 {
+    background-color: #e3de4f; 
+}
+
+.box h3 {
+    font-size: 1.5rem; 
+    font-weight: bold;
+}
+
+.box p {
+    color: #5876a0;
+}
+
+.box p.order-text-list {
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.box button {
+    border: none;
+    cursor: pointer;
+}
+
+.box button.bg-white {
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+}
+
+.main button.bg-orange {
+    background-color: #fed7aa; 
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+    </style>
+</head>
+<body class="fullbody">
+    <div class="sidebar">
+        <div>
+            <h1 class="buymore">BuyMore</h1>
+            <p class="orders">37 <span class="order-text">Orders</span><br>Last 7 days</p>
+            <nav class="buy-menu">
+                <ul>
+                    <li class="buy-menu-list"><a href="#" class="buy-menu-list-name ">Popular Products</a></li>
+                    <li class="buy-menu-list"><a href="#" class="buy-menu-explore">Explore New</a></li>
+                    <li class="buy-menu-list"><a href="#" class="buy-menu-list-name ">Clothing and Shoes</a></li>
+                    <li class="buy-menu-list"><a href="#" class="buy-menu-list-name ">Gifts and Living</a></li>
+                    <li class="buy-menu-list"><a href="#" class="buy-menu-list-name ">Inspiration</a></li>
+                </ul>
+            </nav>
+            <div class="buy-menu">
+                <h3 class="order-text ">QUICK ACTIONS</h3>
+                <button class="buy-menu-list-name"><span class="buy-more-list-name2">+</span>Request for product</button>
+                <button class="buy-menu-list-name"><span class="buy-more-list-name2">+</span>Add member</button>
+            </div>
+            <div class="buy-menu">
+                <h3 class="order-text">Last orders (37)</h3>
+                <p class="orders">DXC NIKE.<a href="#" class="order-text-list">view order</a></p>
+                <p class="orders">OUTERWEAR.<a href="#" class="order-text-list">view order</a></p>
+                <button class="order-text-list"></button>
+            </div>
+        </div>
+        <button class="buy-menu-list-name">Log out</button>
+    </div>
+    <div class="main">
+        <header class="flex">
+            <div class="flex-space">
+                <button class="flex-space-list ">Dashboard</button>
+                <button class="bg-white ">Website</button>
+            </div>
+            <div class="flex-space">
+                <button class="flex-space-list">Cart</button>
+                <p class="flex-space-p">+8</p>
+                <p class="buy-menu-list-name">RYANA</p>
+            </div>
+        </header>
+        <div class="flex">
+            <button class="flex-space-border">All</button>
+            <button class="flex-men">Men</button>
+            <button class="flex-men">Women</button>
+            <button class="flex-space-list">Filters</button>
+            <button class="flex-space-list">search</button>
+        </div>
+
+        <h2 class="explore-sec">Explore</h2>
+        <div class="grid">
+            <div class="box bg-green-100">
+                <div class="text-right">
+                    <button class="buymore"></button>
+                </div>
+                <div>
+                    <h3 class="buymore ">GET UP TO 50% OFF</h3>
+                    <p>Winter weekend<br>Get Discount</p>
+                </div>
+            </div>
+            <div class="box bg-white">
+                <div class="flex">
+                    <h3 class="text-xl ">OUR PICKS</h3>
+                    <button class="buymore"></button>
+                </div>
+                <p>WMX Rubber Zebra sandal</p>
+                <p class="order-text-list ">$36</p>
+            </div>
+            <div class="box bg-white ">
+                <div class="flex">
+                    <h3 class="text-xl ">YOUR CHOICE</h3>
+                    <button class="buymore"></button>
+                </div>
+                <p>Super Skinny jogger in brown</p>
+                <p class="order-text-list ">$89</p>
+            </div>
+            <div class="box bg-yellow-100 ">
+                <h3 class="buymore ">WINTER'S WEEKEND</h3>
+                <p>keep it casual</p>
+            </div>
+            <div class="box bg-white ">
+                <h3 class="text-xl ">FAVOURITES</h3>
+                <div class="flex">
+                    <button class="buymore"></button>
+                    <button class="buymore"></button>
+                </div>
+            </div>
+            <div class="box bg-white ">
+                <h3 class="buymore ">BRING BOLD</h3>
+                <p>Layers on Layers</p>
+                <button class="bg-white  mt-2"></button>
+            </div>
+        </div>
+        <button class="bg-orange buy-menu">AVAILABLE OFFERS</button>
+    </div>
+</body>
+</html>
