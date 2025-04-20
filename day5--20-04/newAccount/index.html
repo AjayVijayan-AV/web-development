@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 740px;
+        }
+        .left {
+            background: #2bdb74;
+            width: 40%;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .left h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .right {
+            width: 60%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: #E8F8F5;
+            width: 30%;
+            box-sizing: border-box;
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+        .select {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: #E8F8F5;
+            width: 100%;
+        }
+        .radio {
+            margin: 10px 0;
+            display: flex;
+            gap: 20px;
+        }
+        .check {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .btn {
+            padding: 10px;
+            background: #48a8e9;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 30%;
+            align-items: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h1>Discover the world's top Designers & Creatives</h1>
+    </div>
+    <div class="right">
+        <h2>Create a new account</h2>
+        <div class="row">
+            <input type="text" class="input" placeholder="First name">
+            <input type="text" class="input" placeholder="Last name">
+        </div >
+        <input type="email" class="input" placeholder="Email" style="width: 500px;">
+        <input type="password" class="input" placeholder="Password" style="width: 500px;">
+        <div>
+            <label>Birthday</label>
+            <div class="row">
+                <select class="select">
+                    <option>Jan</option>
+                    <option>Feb</option>
+                    <option>mar</option>
+                    <option>April</option>
+                    <option>may</option>
+                    <option>Jun</option>
+                </select>
+                <select class="select">
+                    <option>15</option>
+                    <option>15</option>
+                    <option>15</option>
+                    <option>15</option>
+                </select>
+                <select class="select">
+                    <option>2025</option>
+                    <option>2024</option>
+                    <option>2023</option>
+                    <option>2022</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label>Gender</label>
+            <div class="radio">
+                <label><input type="radio" name="gender"> Male</label>
+                <label><input type="radio" name="gender"> Female</label>
+                <label><input type="radio" name="gender"> Custom</label>
+            </div>
+        </div>
+        <div class="check">
+            <label><input type="checkbox"> Creating an account means you're okay with our Terms of Service, Privacy Policy and our default Notification Settings</label>
+        </div>
+        <button class="btn">SIGN UP</button>
+    </div>
+</body>
+</html>
