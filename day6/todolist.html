@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        
+        .search {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid;
+        }
+        
+        .task.red {
+            border-color: red;
+        }
+        
+        .task.green {
+            border-color: green;
+        }
+        
+        .task.yellow {
+            border-color: yellow;
+        }
+        
+        .progress {
+            font-size: 12px;
+        }
+        
+        .btn {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .btn.blue {
+            background: blue;
+            color: white;
+        }
+        
+        .btn.red {
+            background: red;
+            color: white;
+        }
+        
+        .btn.gray {
+            background: #ddd;
+        }
+        
+        .btn.yellow {
+            background: yellow;
+        }
+        
+        .btn.green {
+            background: green;
+            color: white;
+        }
+        
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .priority {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card left">
+            <div class="header">
+                <h2 id="greeting">Hello, Damian</h2>
+            </div>
+            <input type="text" class="search" placeholder="Search your tasks">
+            <h3>Last added</h3>
+
+            <div id="last">
+
+            </div>
+
+            <h3>Tasks list</h3>
+
+            <div id="list">
+
+            </div>
+
+            <button class="btn" onclick="showForm()">Create task</button>
+        </div>
+
+        <div class="card right" id="form" style="display: none;">
+            <h2>Create new task</h2>
+
+            <label>Main task name</label>
+            <input type="text" id="main" class="input" placeholder="UI/UX App Design">
+            <label>Due date</label>
+            <input type="datetime-local" id="date" class="input" placeholder="April 29, 2023 12:30 AM">
+
+            <label>Choose priority</label>
+            <div class="priority">
+
+                <button class="btn" onclick="setPriority('red')">High</button>
+                <button class="btn" onclick="setPriority('yellow')">Medium</button>
+                <button class="btn" onclick="setPriority('green')">Low</button>
+
+            </div>
+
+            <label>Sub-task name</label>
+            <input type="text" id="sub1" class="input" placeholder="Prototyping">
+            <label>Sub-task name</label>
+            <input type="text" id="sub2" class="input" placeholder="Animate the logo">
+            <button class="btn gray">Add sub-task</button>
+            <label>Description</label>
+            <textarea id="desc" class="input">First I have to prototype my design. It's very important.</textarea>
+
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <button class="btn" onclick="addTask()">Add task</button>
+                <button class="btn btn1" onclick="clearForm()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let priority = 'red';
+        let tasks = [{
+            name: 'UI/UX App Design',
+            priority: 'red',
+            progress: '75%'
+        }];
+
+        function showForm() {
+            document.getElementById('form').style.display = 'block';
+        }
+
+        function setPriority(value) {
+            priority = value;
+        }
+        const last = document.getElementById('last');
+
+        function addTask() {
+            const main = document.getElementById('main').value;
+            const sub1 = document.getElementById('sub1').value;
+            const sub2 = document.getElementById('sub2').value;
+            tasks.push({
+                name: main,
+                priority: priority,
+                progress: '0%'
+            });
+
+            last.innerHTML = `<div class="task ${priority}">
+                <span>${main}</span> <button id = 'removebtn'>remove</button></div>
+            ` + last.innerHTML;
+
+
+            const list = document.getElementById('list');
+
+            list.innerHTML = `<div class="task ${priority}">
+                    <span>${main}</span>
+                    <span class="progress">0%</span>
+                </div>` + list.innerHTML;
+
+            removebtn.addEventListener('click', function() {
+                last.remove();
+            });
+            newElement.appendChild(removeButton);
+            removeButton.textContent = 'Remove';
+            clearForm();
+        }
+        const cleartask = document.getElementById(last)
+
+        function clearForm() {
+            document.getElementById('last').value = ' ';
+            document.getElementById('main').value = ' ';
+            document.getElementById('date').value = ' ';
+            document.getElementById('sub1').value = ' ';
+            document.getElementById('sub2').value = ' ';
+            document.getElementById('desc').value = ' ';
+            priority = 'red';
+        }
+    </script>
+</body>
+
+</html>
