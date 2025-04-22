@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+    }
+    header{
+        background-color: #ffffff; 
+        color: rgb(0, 0, 0); 
+        padding: 10px; 
+        border: 1px solid #ccc;
+        border-bottom: 5px solid #ccc;
+        border-radius: 10px;
+        display: flex; 
+        align-items: center;
+        justify-content: space-between;
+    }
+    .container {
+        display: flex;
+        gap: 20px;
+    }
+    .sidebar {
+        width: 200px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .main {
+        flex: 1;
+        display: flex;
+        flex-direction:column;
+        gap: 20px;
+    }
+    .filter {
+        margin-bottom: 20px;
+    }
+    .filter label {
+        display: block;
+        margin: 5px 0;
+    }
+    .filter input[type="checkbox"] {
+        margin-right: 5px;
+    }
+    .price {
+        margin-top: 20px;
+    }
+    .price input[type="range"] {
+        width: 100%;
+    }
+    .search {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        flex-grow: 1;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .search select {
+        width: auto;
+        height: 50px;
+        flex: 1;
+        flex-direction: column;
+        align-content: center;
+        margin-left: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .cars{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .car {
+        /* display: flex; */
+        flex-direction: column;  
+        margin-bottom: 20px;
+        align-items: stretch;
+        width: calc(33.33% - 20px);
+        background-color: rgb(255, 255, 255);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+    }
+    .car img {
+        width: 100%;
+        height: auto;
+    }
+    .car h3 {
+        margin: 10px 0;
+    }
+    .car p {
+        margin: 5px 0;
+    }
+    .car button {
+        background-color: #6200ea;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <header>
+        <div>
+            <input type="search" name="" id="find" style="border-radius: 50px; margin-left: 80px;">
+            <button style="border-radius: 50px; padding: 5px;background-color: #a0a0a1; color: rgb(255, 255, 255);">Search</button>
+        </div>
+        <label for="profile">profile</label>
+    </header>
+    <div class="container">
+        <div class="sidebar">
+            <div class="filter">
+                <h3>TYPE</h3>
+                <label><input type="checkbox"> Sport </label>
+                <label><input type="checkbox"> SUV </label>
+                <label><input type="checkbox"> MPV </label>
+                <label><input type="checkbox"> Sedan </label>
+                <label><input type="checkbox"> Coupe </label>
+                <label><input type="checkbox"> Hatchback </label>
+            </div>
+            <div class="filter">
+                <h3>CAPACITY</h3>
+                <label><input type="checkbox"> 2 Person </label>
+                <label><input type="checkbox"> 4 Person </label>
+                <label><input type="checkbox"> 6 Person </label>
+                <label><input type="checkbox"> 8 or More </label>
+            </div>
+            <div class="price">
+                <h3>PRICE</h3>
+                <input type="range" min="0" max="200" value="200">
+                <p>MAX. $200.00</p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="search">
+                <select><option>Pick - Up Locations</option></select>
+                <select><option>Date</option></select>
+                <select><option>Time</option></select>
+                <select><option>Drop - Off Locations</option></select>
+                <select><option>Date</option></select>
+                <select><option>Time</option></select>
+            </div>
+            <div class="cars">
+                <div class="car">
+                    
+                    <h3>Nissan GT - R</h3>
+                    <p>Sport</p>
+                    <img src="" alt="Nissan GT-R">
+                    <p>Gasoline Manual  2 People</p>
+                    <p>$80.00/day</p>
+                    <button>Rent Now</button>
+                </div>
+                <div class="car">
+                    
+                    <h3>Rolls - Royce</h3>
+                    <p>Sedan</p>
+                    <img src="" alt="Rolls-Royce">
+                    <p>Gasoline Auto 4 People</p>
+                    <p>$90.00/day</p>
+                    <button>Rent Now</button>
+                </div>
+                <div class="car">
+                    
+                    <h3>Nissan GT - R</h3>
+                    <p>Sport</p>
+                    <img src="" alt="Nissan GT-R">
+                    <p>Gasoline Manual 2 People</p>
+                    <p>$80.00/day</p>
+                    <button>Rent Now</button>
+                </div>
+                <div class="car">
+                    
+                    <h3>CR - V</h3>
+                    <p>SUV</p>
+                    <img src="" alt="CR-V">
+                    <p>Gasoline Manual 6 People</p>
+                    <p>$80.00/day</p>
+                    <button>Rent Now</button>
+                </div>
+                <div class="car">
+                    
+                    <h3>Nissan GT - R</h3>
+                    <p>Sport</p>
+                    <img src="" alt="Nissan GT-R">
+                    <p>Gasoline Manual  2 People</p>
+                    <p>$80.00/day</p>
+                    <button>Rent Now</button>
+                </div>
+                <div class="car">
+                    
+                    <h3>Rolls - Royce</h3>
+                    <p>Sedan</p>
+                    <img src="" alt="Rolls-Royce">
+                    <p>Gasoline Auto 4 People</p>
+                    <p>$90.00/day</p>
+                    <button>Rent Now</button>
+                </div>
+                <div class="car">
+                    
+                    <h3>Nissan GT - R</h3>
+                    <p>Sport</p>
+                    <img src="" alt="Nissan GT-R">
+                    <p>Gasoline Manual 2 People</p>
+                    <p>$80.00/day</p>
+                    <button>Rent Now</button>
+                </div>
+                <div class="car">
+                    
+                    <h3>CR - V</h3>
+                    <p>SUV</p>
+                    <img src="" alt="CR-V">
+                    <p>Gasoline Manual 6 People</p>
+                    <p>$80.00/day</p>
+                    <button>Rent Now</button>
+                </div>
+                <div class="car">
+                    
+                    <h3>CR - V</h3>
+                    <p>SUV</p>
+                    <img src="" alt="CR-V">
+                    <p>Gasoline Manual 6 People</p>
+                    <p>$80.00/day</p>
+                    <button>Rent Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
