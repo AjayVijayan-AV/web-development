@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #e3e2e2;
+            border-bottom: 1px solid #ddd;
+            margin: 5px;
+        }
+        .header span {
+            font-weight: bold;
+        }
+        .header .date {
+            display: flex;
+            align-items: center;
+        }
+        .sidebar {
+            width: 250px;
+            float: left;
+            padding: 15px;
+            background-color: #d4d4d4;
+            height: 100vh;
+            border-right: 1px solid #ddd;
+            margin: 5px;
+        }
+        .filter {
+            margin-bottom: 20px;
+        }
+        .filter h3 {
+            margin: 0 0 10px;
+        }
+        .filter button {
+            color: red;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .quota, .origin, .dest {
+            margin: 10px 0;
+        }
+        .quota label, .origin label, .dest label {
+            display: block;
+            margin: 5px 0;
+        }
+        .main {
+            margin-left: 270px;
+            padding: 15px;
+            margin: 5px;
+        }
+        .sort {
+            margin-bottom: 10px;
+            margin-left: 23%;
+            border: 0 solid;
+            background-color: #d4d4d4;
+        }
+        .sort span {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .sort .active {
+            font-weight: bold;
+        }
+        .train {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            margin-left: 23%;
+            background-color: #e4e3e3;
+        }
+        .train-head {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .train-time {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .train-class {
+            display: flex;
+            justify-content: space-between;
+        }
+        .class-box {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #848484;
+            border-radius: 5px;
+            width: 20%;
+        }
+        .class-box.red {
+            color: red;
+        }
+        .view {
+            color: red;
+            cursor: pointer;
+        }
+        .check {
+            color: red;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span>NEW DELHI (NDLS) → MUMBAI CENTRAL (MMCT)</span>
+        <div class="date">
+            <span><input type="date" name="date" id="date"></span>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="filter">
+            <h3>FILTERS</h3>
+            <button>RESET ALL</button>
+        </div>
+        <div class="quota">
+            <h4>Quota</h4>
+            <label><input type="radio" name="quota" checked> General</label>
+            <label><input type="radio" name="quota"> Tatkal</label>
+            <label><input type="radio" name="quota"> Ladies</label>
+            <label><input type="radio" name="quota"> Senior Citizen/Lower Berth</label>
+        </div>
+        <div class="origin">
+            <h4>Origin Station</h4>
+            <label><input type="checkbox"> NZM</label>
+            <label><input type="checkbox"> NDLS</label>
+            <label><input type="checkbox"> DEE</label>
+            <label><input type="checkbox"> SZM</label>
+            <label><input type="checkbox"> ANDI</label>
+        </div>
+        <div class="dest">
+            <h4>Destination Station</h4>
+            <label><input type="checkbox"> MMCT</label>
+            <label><input type="checkbox"> CSMT</label>
+            <label><input type="checkbox"> PNVL</label>
+            <label><input type="checkbox"> BDTSTS</label>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sort">
+            Sort by:<select class="active">
+                <option>Departure</option>
+                <option>Arrival</option>
+            </select>
+            Duration:<input type="time">
+        </div>
+        <div class="train">
+            <div class="train-head">
+                <span>12904 - GOLDEN TEMPLE M</span>
+                <span class="view"><span class="week">S M T W T F S</span> VIEW SCHEDULE</span>
+            </div>
+            <div class="train-time">
+                <span>04:00 NZM</span>
+                <span>19h 35m</span>
+                <span>23:35 MMCT</span>
+            </div>
+            <div class="train-class">
+                <div class="class-box red">
+                    <div>₹ 2335</div>
+                    <div>3A</div>
+                    <div>REGRET</div>
+                    <div>No More Booking</div>
+                    <div>1 hr ago</div>
+                </div>
+                <div class="class-box red">
+                    <div>₹ 1630</div>
+                    <div>SL</div>
+                    <div>REGRET</div>
+                    <div>No More Booking</div>
+                    <div>22 mins ago</div>
+                </div>
+                <div class="class-box red">
+                    <div>₹ 620</div>
+                    <div>2S</div>
+                    <div>REGRET</div>
+                    <div>No More Booking</div>
+                    <div>6 mins ago</div>
+                </div>
+                <div class="class-box">
+                    <div>₹ 3955</div>
+                    <div>1A</div>
+                    <div>RLWL6/WL4</div>
+                    <div>47% Chance</div>
+                    <div>30 mins ago</div>
+                </div>
+            </div>
+            <div class="check">Check 6 days availability</div>
+        </div>
+        <div class="train">
+            <div class="train-head">
+                <span>12138 - PUNJAB MAIL</span>
+                <span class="view"><span class="week">S M T W T F S</span> VIEW SCHEDULE</span>
+            </div>
+            <div class="train-time">
+                <span>05:10 NDLS</span>
+                <span>26h 25m</span>
+                <span>07:35 CSMT</span>
+            </div>
+            <div class="train-class">
+                <div class="class-box">
+                    <div>₹ 2490</div>
+                    <div>2A</div>
+                    <div>RLWL19/WL13</div>
+                    <div>43% Chance</div>
+                    <div>1 hr ago</div>
+                </div>
+                <div class="class-box">
+                    <div>₹ 1735</div>
+                    <div>3A</div>
+                    <div>RLWL52/WL32</div>
+                    <div>38% Chance</div>
+                    <div>3 mins ago</div>
+                </div>
+                <div class="class-box">
+                    <div>₹ 655</div>
+                    <div>SL</div>
+                    <div>RLWL72/WL53</div>
+                    <div>35% Chance</div>
+                    <div>6 mins ago</div>
+                </div>
+                <div class="class-box">
+                    <div>₹ 4230</div>
+                    <div>1A</div>
+                    <div>RLWL1/WL1</div>
+                    <div>63% Chance</div>
+                    <div>30 mins ago</div>
+                </div>
+            </div>
+            <div class="check">Check 6 days availability</div>
+        </div>
+    </div>
+</body>
+</html>
