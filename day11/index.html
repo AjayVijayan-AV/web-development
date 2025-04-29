@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bus Booking</title>
+  <style>
+    body { 
+        font-family: Arial;
+        margin: 0;
+     }
+    .top { 
+        background: #f8f8f8; 
+        padding: 10px; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+    .logo { 
+        color: red; 
+        font-size: 24px; 
+        font-weight: bold; 
+    }
+    .nav { 
+        display: flex; 
+        gap: 20px; 
+    }
+    .nav a { 
+        text-decoration: none; 
+        color: black; 
+    }
+    .search { 
+        display: flex; 
+        gap: 10px; 
+        align-items: center; 
+        padding: 10px; 
+        background: #fff; 
+    }
+    .city { 
+        padding: 5px; 
+    }
+    .date { 
+        padding: 5px; 
+    }
+    .btn { 
+        background: red; 
+        color: white; 
+        padding: 10px; 
+        border: none; 
+        cursor: pointer; 
+    }
+    .filter { 
+        width: 20%; 
+        padding: 10px; 
+        background: #f8f8f8; 
+    }
+    .main { 
+        display: flex; 
+    }
+    .list { 
+        width: 80%; 
+        padding: 10px; 
+    }
+    .bus { 
+        border: 1px solid #ddd; 
+        padding: 10px; 
+        margin: 10px 0; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+    .name { 
+        font-weight: bold; 
+    }
+    .time { 
+        font-size: 14px; 
+    }
+    .price { 
+        font-size: 16px; 
+        font-weight: bold; 
+    }
+    .seats { 
+        color: green; 
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="logo">abhibus</div>
+    <div class="nav">
+      <a href="#">Buses</a>
+      <a href="#">Flights</a>
+      <a href="#">Trains</a>
+      <a href="#">Hotels</a>
+    </div>
+    <div>
+      <a href="#">Offers</a> | <a href="#">Track</a> | <a href="#">Help</a> | <a href="#">Login</a>
+    </div>
+  </div>
+
+  <div class="search">
+    <input type="text" id="from" class="city" placeholder="HYDERABAD" >
+    <input type="text" id="to" class="city" placeholder="BANGALORE">
+    <input type="date" id="date" class="date">
+    <button class="btn">Search</button>
+  </div>
+
+  <div class="main">
+    <div class="filter">
+      <h3>Filters</h3>
+      <p>Bus Type</p>
+      <input type="checkbox"> AC<br>
+      <input type="checkbox"> Sleeper<br>
+      <input type="checkbox"> Seater<br>
+      <input type="checkbox"> Non-AC<br>
+      <p>Price Range</p>
+      <input type="range" min="674" max="3999" value="674">
+      <p>Depart Time</p>
+      <input type="checkbox"> Before 10 AM<br>
+      <input type="checkbox"> 10 AM - 5 PM<br>
+      <input type="checkbox"> 5 PM - 11 PM<br>
+      <input type="checkbox"> After 11 PM
+    </div>
+
+    <div class="list">
+      <div class="bus">
+        <div>
+          <div class="name">Yolo Bus</div>
+          <div>Bharat Benz (2+1)</div>
+          <div class="time">00:15 - 12:04 (11h 49m)</div>
+          <div class="seats">27 Seats Available</div>
+        </div>
+        <div class="price">From ₹1,030</div>
+        <button class="btn">Select Seats</button>
+      </div>
+
+      <div class="bus">
+        <div>
+          <div class="name">SL Travels</div>
+          <div>2+1, Sleeper, Non-AC</div>
+          <div class="time">19:00 - 05:00 (10h)</div>
+          <div class="seats">15 Seats Available</div>
+        </div>
+        <div class="price">From ₹1,509</div>
+        <button class="btn">Select Seats</button>
+      </div>
+      <div class="bus">
+        <div>
+          <div class="name">Yolo Bus</div>
+          <div>Bharat Benz (2+1)</div>
+          <div class="time">00:15 - 12:04 (11h 49m)</div>
+          <div class="seats">27 Seats Available</div>
+        </div>
+        <div class="price">From ₹1,030</div>
+        <button class="btn">Select Seats</button>
+      </div>
+
+      <div class="bus">
+        <div>
+          <div class="name">SL Travels</div>
+          <div>2+1, Sleeper, Non-AC</div>
+          <div class="time">19:00 - 05:00 (10h)</div>
+          <div class="seats">15 Seats Available</div>
+        </div>
+        <div class="price">From ₹1,509</div>
+        <button class="btn">Select Seats</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let btn = document.querySelectorAll(".btn");
+    btn.forEach(b => {
+      b.addEventListener("click", () => {
+        alert("Seats selection opened!");
+      });
+    });
+  </script>
+</body>
+</html>
