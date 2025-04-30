@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 20%;
+            height: 100vh;
+            border-radius: 10px;
+            background-color: #e9e6f5;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        #title {
+            font-size: 20px;
+            color: #4b3b9c;
+            margin-bottom: 30px;
+        }
+
+        #lineup {
+            list-style: none;
+        }
+
+        #lineup button {
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            height: 40px;
+            text-align: left;
+            padding-left: 10px;
+            font-size: 16px;
+            color: #4b3b9c;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #lineup button:hover {
+            background-color: #d9d4f1;
+        }
+
+        #lineup button.active {
+            background-color: #d9d4f1;
+            font-weight: bold;
+        }
+
+        .badge {
+            background-color: #4b3b9c;
+            color: white;
+            border-radius: 10px;
+            padding: 2px 8px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .main-content {
+            width: 80%;
+            padding: 20px;
+            background-color: #f7f9fc;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .header .actions button {
+            background-color: #e9e6f5;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        .header .actions button.add-customer {
+            background-color: #4b3b9c;
+            color: white;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .tabs button.active {
+            color: #4b3b9c;
+            border-bottom: 2px solid #4b3b9c;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .stats .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats .card h3 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .stats .card p {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .stats .card .growth {
+            color: #28a745;
+            font-size: 14px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .filters .filter-buttons button {
+            background-color: #e9e6f5;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .filters .search input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+        }
+
+        th {
+            background-color: #f7f9fc;
+            font-weight: normal;
+        }
+
+        td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .status {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            background-color: #e9e6f5;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2 id="title">Untitled UI</h2>
+            <ul id="lineup">
+                <button class="active"><li>Home</li></button>
+                <button><li>Notifications <span class="badge">10</span></li></button>
+                <button><li>Projects</li></button>
+                <button><li>Tasks</li></button>
+                <button><li>Reporting</li></button>
+                <button><li>Users</li></button>
+            </ul>
+            <div>
+                <ul id="lineup">
+                    <button><li>Support</li></button>
+                    <button><li>Settings</li></button>
+                </ul>
+                <h2 id="title">Frankie Sullivan</h2>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Customers</h1>
+                <div class="actions">
+                    <button>Import</button>
+                    <button class="add-customer">+ Add Customer</button>
+                </div>
+            </div>
+            <div class="tabs">
+                <button class="active">Overview</button>
+                <button>Table</button>
+                <button>List</button>
+                <button>Segment</button>
+                <button>Custom</button>
+            </div>
+            <div class="stats">
+                <div class="card">
+                    <h3>Total Customers</h3>
+                    <p>2,420</p>
+                    <span class="growth">↑ 20%</span>
+                </div>
+                <div class="card">
+                    <h3>Members</h3>
+                    <p>1,210</p>
+                    <span class="growth">↑ 15%</span>
+                </div>
+                <div class="card">
+                    <h3>Active Now</h3>
+                    <p>316</p>
+                </div>
+            </div>
+            <div class="filters">
+                <div class="filter-buttons">
+                    <button>All time</button>
+                    <button>US, AU, UK</button>
+                    <button>More filters</button>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>Company</th>
+                        <th>Status</th>
+                        <th>About</th>
+                        <th>Users</th>
+                        <th>License Use</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Catalog</td>
+                        <td class="status">Customer</td>
+                        <td>Content curating app</td>
+                        <td>5 users</td>
+                        <td><progress value="70" max="100"></progress></td>
+                        <td>
+                            <button>🗑️</button>
+                            <button>✏️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Catalog</td>
+                        <td class="status">Churned</td>
+                        <td>Design software</td>
+                        <td>6 users</td>
+                        <td><progress value="50" max="100"></progress></td>
+                        <td>
+                            <button>🗑️</button>
+                            <button>✏️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Catalog</td>
+                        <td class="status">Customer</td>
+                        <td>Content curating app</td>
+                        <td>5 users</td>
+                        <td><progress value="70" max="100"></progress></td>
+                        <td>
+                            <button>🗑️</button>
+                            <button>✏️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Catalog</td>
+                        <td class="status">Churned</td>
+                        <td>Design software</td>
+                        <td>6 users</td>
+                        <td><progress value="50" max="100"></progress></td>
+                        <td>
+                            <button>🗑️</button>
+                            <button>✏️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Catalog</td>
+                        <td class="status">Customer</td>
+                        <td>Content curating app</td>
+                        <td>5 users</td>
+                        <td><progress value="70" max="100"></progress></td>
+                        <td>
+                            <button>🗑️</button>
+                            <button>✏️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Catalog</td>
+                        <td class="status">Churned</td>
+                        <td>Design software</td>
+                        <td>6 users</td>
+                        <td><progress value="50" max="100"></progress></td>
+                        <td>
+                            <button>🗑️</button>
+                            <button>✏️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Catalog</td>
+                        <td class="status">Customer</td>
+                        <td>Content curating app</td>
+                        <td>5 users</td>
+                        <td><progress value="70" max="100"></progress></td>
+                        <td>
+                            <button>🗑️</button>
+                            <button>✏️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Catalog</td>
+                        <td class="status">Churned</td>
+                        <td>Design software</td>
+                        <td>6 users</td>
+                        <td><progress value="50" max="100"></progress></td>
+                        <td>
+                            <button>🗑️</button>
+                            <button>✏️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button>Previous</button>
+                <span>Page 1 of 10</span>
+                <button>Next</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

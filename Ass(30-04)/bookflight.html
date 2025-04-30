@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #e6f0fa, #ffffff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #main {
+            width: 90%;
+            height: 90vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+        #nav {
+            width: 15%;
+            background: #f5f8fd;
+            border-radius: 20px 0 0 20px;
+            padding: 20px;
+        }
+        #nav h1 {
+            color: #1e90ff;
+            font-size: 24px;
+            margin: 0;
+        }
+        #nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+        #nav li {
+            margin: 20px 0;
+            color: #666;
+            cursor: pointer;
+        }
+        #nav li:hover {
+            color: #1e90ff;
+        }
+        #content {
+            width: 60%;
+            padding: 20px;
+        }
+        #content h2 {
+            font-size: 28px;
+            color: #333;
+        }
+        #search-box {
+            background: #f5f8fd;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .input {
+            display: flex;
+            flex-direction: column;
+        }
+        .input label {
+            color: #666;
+            font-size: 14px;
+        }
+        .input select, .input input {
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        #search-btn {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        .flight {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .flight div {
+            display: flex;
+            flex-direction: column;
+        }
+        .price {
+            font-size: 24px;
+            color: #333;
+        }
+        .btn {
+            background: #1e90ff;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #filter {
+            width: 25%;
+            padding: 20px;
+            background: #f5f8fd;
+            border-radius: 0 20px 20px 0;
+        }
+        #filter h3 {
+            font-size: 18px;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+        }
+        #filter label {
+            display: block;
+            margin: 10px 0;
+            color: #666;
+        }
+        #filter input[type="range"] {
+            width: 100%;
+        }
+        #filter select {
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .checkbox {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        #apply-btn {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="nav">
+            <h1>maburo.</h1>
+            <ul>
+                <li>Home</li>
+                <li>Ticket</li>
+                <li>Schedule</li>
+                <li>History</li>
+                <li>Support</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+        <div id="content">
+            <h2>Book a Flight</h2>
+            <div id="search-box">
+                <div class="input">
+                    <label>From</label>
+                    <select>
+                        <option>Warsaw Chopin Airport (WAW)</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <label>To</label>
+                    <select>
+                        <option>New Yogyakarta (YIA)</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <label>Date</label>
+                    <input type="date" value="2020-09-28">
+                </div>
+                <button id="search-btn">Search</button>
+            </div>
+            <div id="results">
+                <h3>Result</h3>
+                <div class="flight">
+                    <div>
+                        <span>4:25 PM - 12:52 PM+</span>
+                        <span>Garuda INA</span>
+                        <span>Boeing 737 • SN-4287 • KOP-REF</span>
+                    </div>
+                    <div>
+                        <span class="price">€678</span>
+                        <button class="btn">Book</button>
+                    </div>
+                </div>
+                <div class="flight">
+                    <div>
+                        <span>10:05 AM - 12:45 PM+1</span>
+                        <span>Virgin Atlantic</span>
+                        <span>Boeing 777 • SN-05833 • JKE-AAB</span>
+                    </div>
+                    <div>
+                        <span class="price">€720</span>
+                        <button class="btn">Book</button>
+                    </div>
+                </div>
+                <div class="flight">
+                    <div>
+                        <span>4:25 PM - 12:52 PM+</span>
+                        <span>Garuda INA</span>
+                        <span>Boeing 737 • SN-4287 • KOP-REF</span>
+                    </div>
+                    <div>
+                        <span class="price">€678</span>
+                        <button class="btn">Book</button>
+                    </div>
+                </div>
+                <div class="flight">
+                    <div>
+                        <span>10:05 AM - 12:45 PM+1</span>
+                        <span>Virgin Atlantic</span>
+                        <span>Boeing 777 • SN-05833 • JKE-AAB</span>
+                    </div>
+                    <div>
+                        <span class="price">€720</span>
+                        <button class="btn">Book</button>
+                    </div>
+                </div>
+                <div class="flight">
+                    <div>
+                        <span>4:25 PM - 12:52 PM+</span>
+                        <span>Garuda INA</span>
+                        <span>Boeing 737 • SN-4287 • KOP-REF</span>
+                    </div>
+                    <div>
+                        <span class="price">€678</span>
+                        <button class="btn">Book</button>
+                    </div>
+                </div>
+                <div class="flight">
+                    <div>
+                        <span>10:05 AM - 12:45 PM+1</span>
+                        <span>Virgin Atlantic</span>
+                        <span>Boeing 777 • SN-05833 • JKE-AAB</span>
+                    </div>
+                    <div>
+                        <span class="price">€720</span>
+                        <button class="btn">Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="filter">
+            <h3>Filter <span>Reset</span></h3>
+            <label>Cabin Class</label>
+            <div class="checkbox">
+                <input type="checkbox" checked> All
+                <input type="checkbox"> Economy
+                <input type="checkbox"> Business
+                <input type="checkbox"> First Class
+            </div>
+            <label>Price</label>
+            <input type="range" min="400" max="900" value="600">
+            <div>€400 - €900</div>
+            <label>Depart</label>
+            <select>
+                <option>1:30 PM - 4:00 PM</option>
+                <option>10:00 AM - 1:45 PM</option>
+            </select>
+            <label>Airline</label>
+            <div class="checkbox">
+                <input type="checkbox"> Garuda INA
+                <input type="checkbox"> Virgin Atlantic
+                <input type="checkbox"> Lufthansa
+            </div>
+            <button id="apply-btn">Apply Filter</button>
+        </div>
+    </div>
+</body>
+</html>

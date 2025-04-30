@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jully Baby Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 50vh;
+            background-color: #20b2aa;
+        }
+        #container {
+            width: 300px;
+            height: 70vh;
+            background: white;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        #logo {
+            font-size: 24px;
+            color: #6a5acd;
+            margin-bottom: 20px;
+        }
+        #logo span {
+            color: #ff69b4;
+        }
+        .btn {
+            background: #20b2aa;
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            width: 60%;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .input {
+            width: 60%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .link {
+            color: #20b2aa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .social {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .social img {
+            width: 30px;
+            cursor: pointer;
+        }
+        #welcome {
+            font-size: 18px;
+            color: #6a5acd;
+            margin-bottom: 20px;
+        }
+        #hide {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="app">
+        <div id="container">
+            <div id="logo">JULLY <span>baby store</span></div>
+
+            <div id="home" class="page">
+                <button class="btn" onclick="show('login')">Login</button>
+                <button class="btn" onclick="show('signup')">Register</button>
+            </div>
+
+            <div id="login" class="page" style="display: none;">
+                <div id="welcome">Welcome back! Glad to see you, Again!</div>
+                <input type="email" class="input" placeholder="Enter your email">
+                <input type="password" class="input" placeholder="Enter your password">
+                <button class="btn">Forget Password?<a href="#" class="link"></a></button>
+                <button class="btn">Login</button>
+                <div>Or Login with</div>
+                <div class="social">
+                    <img src="" alt="Facebook">
+                    <img src="" alt="Google">
+                    <img src="" alt="Apple">
+                </div>
+                <div>Don't have an account? <a href="#" class="link" onclick="show('signup')">Register Now</a></div>
+            </div>
+
+            <div id="signup" class="page" style="display: none;">
+                <div id="welcome">Hello! Register to get started</div>
+                <input type="text" class="input" placeholder="Username">
+                <input type="email" class="input" placeholder="Email">
+                <input type="password" class="input" placeholder="Password">
+                <input type="password" class="input" placeholder="Confirm password">
+                <button class="btn">Register</button>
+                <div>Or Register with</div>
+                <div class="social">
+                    <img src="" alt="Facebook">
+                    <img src="" alt="Google">
+                    <img src="" alt="Apple">
+                </div>
+                <div>Already have an account? <a href="#" class="link" onclick="show('login')">Login Now</a></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function show(page) {
+            document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+            document.getElementById(page).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
